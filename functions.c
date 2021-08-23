@@ -65,7 +65,7 @@ int32_t charToInt(uint8_t c) {
 
 int32_t stringToInt(uint8_t *str) {
   int32_t result = 0;
-  uint8_t isNegative = 0; // 0 == false, 1 == true
+  int8_t isNegative = 0; // 0 == false, 1 == true
   int32_t numberOfCharacters = countCharacters(str);
 
   int32_t i = 0;

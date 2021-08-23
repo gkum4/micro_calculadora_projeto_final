@@ -149,7 +149,7 @@ int main(void) {
             break;
           }
 
-          if (valueAStrPosition != 0 && valueAStr[valueAStrPosition] != '-') {
+          if (valueAStrPosition != 0 && valueAStr[valueAStrPosition-1] != '-') {
             operationType = getOperationType(kbInput);
             valueAStr[valueAStrPosition] = '\0';
             Uart0_Send(kbInput);
@@ -192,7 +192,7 @@ int main(void) {
         if (
           kbInput == '=' && 
           valueBStrPosition != 0 && 
-          valueBStr[0] != '-'
+          valueBStr[valueBStrPosition-1] != '-'
         ) {
           valueBStr[valueBStrPosition] = '\0';
           Uart0_Send(kbInput);
