@@ -1,0 +1,220 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  23/Aug/2021  19:16:07
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\gusta\Documents\UTFPR\Sistemas
+#        Microcontrolados\micro_calculadora_projeto_final\Debug\Exe\micro_calculadora_projeto_final.out
+#    Map file     =
+#        C:\Users\gusta\Documents\UTFPR\Sistemas
+#        Microcontrolados\micro_calculadora_projeto_final\Debug\List\micro_calculadora_projeto_final.map
+#    Command line =
+#        -f "C:\Users\gusta\Documents\UTFPR\Sistemas
+#        Microcontrolados\micro_calculadora_projeto_final\Debug\Exe\micro_calculadora_projeto_final.out.rsp"
+#        ("C:\Users\gusta\Documents\UTFPR\Sistemas
+#        Microcontrolados\micro_calculadora_projeto_final\Debug\Obj\cstartup_M.o"
+#        "C:\Users\gusta\Documents\UTFPR\Sistemas
+#        Microcontrolados\micro_calculadora_projeto_final\Debug\Obj\functions.o"
+#        "C:\Users\gusta\Documents\UTFPR\Sistemas
+#        Microcontrolados\micro_calculadora_projeto_final\Debug\Obj\gpio.o"
+#        "C:\Users\gusta\Documents\UTFPR\Sistemas
+#        Microcontrolados\micro_calculadora_projeto_final\Debug\Obj\main.o"
+#        "C:\Users\gusta\Documents\UTFPR\Sistemas
+#        Microcontrolados\micro_calculadora_projeto_final\Debug\Obj\uart.o"
+#        --no_out_extension -o "C:\Users\gusta\Documents\UTFPR\Sistemas
+#        Microcontrolados\micro_calculadora_projeto_final\Debug\Exe\micro_calculadora_projeto_final.out"
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map "C:\Users\gusta\Documents\UTFPR\Sistemas
+#        Microcontrolados\micro_calculadora_projeto_final\Debug\List\micro_calculadora_projeto_final.map"
+#        --config "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0xf'ffff] { ro };
+define block CSTACK with size = 32K, alignment = 8 { };
+define block HEAP with size = 64K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2003'ffff] {
+          rw, block CSTACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind         Address    Size  Object
+  -------   ----         -------    ----  ------
+"A0":                              0x200
+  .intvec   const            0x0   0x200  cstartup_M.o [1]
+                         - 0x200   0x200
+
+"P1":                              0x5f4
+  .text     ro code        0x200   0x30e  main.o [1]
+  .text     ro code        0x50e     0x2  cstartup_M.o [1]
+  .text     ro code        0x510    0xe8  uart.o [1]
+  .text     ro code        0x5f8    0x94  gpio.o [1]
+  .text     ro code        0x68c    0xe0  functions.o [1]
+  .text     ro code        0x76c    0x22  fpinit_M.o [3]
+  .text     ro code        0x78e     0x2  cstartup_M.o [1]
+  .text     ro code        0x790    0x1e  cmain.o [4]
+  .text     ro code        0x7ae     0x4  low_level_init.o [2]
+  .text     ro code        0x7b2     0x4  exit.o [2]
+  .text     ro code        0x7b6     0x2  cstartup_M.o [1]
+  .text     ro code        0x7b8     0xa  cexit.o [4]
+  .text     ro code        0x7c2     0x2  cstartup_M.o [1]
+  .text     ro code        0x7c4    0x14  exit.o [5]
+  .text     ro code        0x7d8    0x10  cstartup_M.o [1]
+  .text     ro code        0x7e8     0x2  cstartup_M.o [1]
+  .text     ro code        0x7ea     0x2  cstartup_M.o [1]
+  .text     ro code        0x7ec     0x2  cstartup_M.o [1]
+  .text     ro code        0x7ee     0x2  cstartup_M.o [1]
+  .text     ro code        0x7f0     0x2  cstartup_M.o [1]
+  .text     ro code        0x7f2     0x2  cstartup_M.o [1]
+                         - 0x7f4   0x5f4
+
+"P2":                             0x8000
+  CSTACK             0x2000'0000  0x8000  <Block>
+    CSTACK  uninit   0x2000'0000  0x8000  <Block tail>
+                   - 0x2000'8000  0x8000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x7f4     0xf'ffff  0xf'f80c
+  0x2000'8000  0x2003'ffff  0x3'8000
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+C:\Users\gusta\Documents\UTFPR\Sistemas Microcontrolados\micro_calculadora_projeto_final\Debug\Obj: [1]
+    cstartup_M.o           36      512
+    functions.o           224
+    gpio.o                148
+    main.o                782
+    uart.o                232
+    -------------------------------------------
+    Total:              1'422      512
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+m7M_tls.a: [3]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [4]
+    cexit.o                10
+    cmain.o                30
+    -------------------------------------------
+    Total:                 40
+
+shb_l.a: [5]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Linker created                       32'768
+-----------------------------------------------
+    Grand Total:        1'524      512   32'768
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+?main                         0x791         Code  Gb  cmain.o [4]
+BusFault_Handler              0x7c3    0x2  Code  Gb  cstartup_M.o [1]
+CSTACK$$Base            0x2000'0000          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'8000          --   Gb  - Linker created -
+DebugMon_Handler              0x7ed    0x2  Code  Gb  cstartup_M.o [1]
+GPIO_Init                     0x5f9   0x5e  Code  Gb  gpio.o [1]
+HardFault_Handler             0x78f    0x2  Code  Gb  cstartup_M.o [1]
+IntDefaultHandler             0x7f3    0x2  Code  Gb  cstartup_M.o [1]
+MemManage_Handler             0x7b7    0x2  Code  Gb  cstartup_M.o [1]
+NMI_Handler                   0x50f    0x2  Code  Gb  cstartup_M.o [1]
+PendSV_Handler                0x7ef    0x2  Code  Gb  cstartup_M.o [1]
+Region$$Table$$Base             0x0          --   Gb  - Linker created -
+Region$$Table$$Limit            0x0          --   Gb  - Linker created -
+SVC_Handler                   0x7eb    0x2  Code  Gb  cstartup_M.o [1]
+SysTick_Handler               0x7f1    0x2  Code  Gb  cstartup_M.o [1]
+Uart0_Init                    0x511   0x8a  Code  Gb  uart.o [1]
+Uart0_Rcv                     0x59b   0x10  Code  Gb  uart.o [1]
+Uart0_Send                    0x5ab   0x10  Code  Gb  uart.o [1]
+UsageFault_Handler            0x7e9    0x2  Code  Gb  cstartup_M.o [1]
+__cmain                       0x791         Code  Gb  cmain.o [4]
+__exit                        0x7c5   0x14  Code  Gb  exit.o [5]
+__iar_init_vfp                0x76d         Code  Gb  fpinit_M.o [3]
+__iar_program_start           0x7d9   0x10  Code  Gb  cstartup_M.o [1]
+__low_level_init              0x7af    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0  0x200  Data  Gb  cstartup_M.o [1]
+_call_main                    0x79d         Code  Gb  cmain.o [4]
+_exit                         0x7b9         Code  Gb  cexit.o [4]
+calculate                     0x239   0x26  Code  Gb  main.o [1]
+charToInt                     0x6f5   0x14  Code  Gb  functions.o [1]
+checkIfInputIsNumber          0x68d   0x10  Code  Gb  functions.o [1]
+checkIfInputIsOperation
+                              0x69d   0x26  Code  Gb  functions.o [1]
+countCharacters               0x6dd   0x18  Code  Gb  functions.o [1]
+countDigits                   0x25f   0x1a  Code  Gb  main.o [1]
+exit                          0x7b3    0x4  Code  Gb  exit.o [2]
+getOperationType              0x211   0x28  Code  Gb  main.o [1]
+main                          0x2d9  0x236  Code  Gb  main.o [1]
+power                         0x6c3   0x1a  Code  Gb  functions.o [1]
+printIntToUart                0x279   0x60  Code  Gb  main.o [1]
+sendNextLineToUart            0x201   0x10  Code  Gb  main.o [1]
+stringToInt                   0x709   0x64  Code  Gb  functions.o [1]
+
+
+[1] = C:\Users\gusta\Documents\UTFPR\Sistemas Microcontrolados\micro_calculadora_projeto_final\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+   1'524 bytes of readonly  code memory
+     512 bytes of readonly  data memory
+  32'768 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

@@ -1,9 +1,3 @@
-// main.c
-// Desenvolvido para a placa EK-TM4C1294XL
-// Verifica se recebeu alguma coisa pela serial e acende um dos leds de acordo com o caractere recebido
-// Verifica o estado da chave USR_SW2, e, caso seja pressionada envia o caracter A pela serial
-// Prof. Guilherme Peron / Prof. Rafael de G�es
-
 #include <stdint.h>
 
 void GPIO_Init(void);
@@ -14,7 +8,7 @@ uint8_t Uart0_Rcv(void);
 void Uart0_Send(uint8_t dado);
 uint8_t checkIfInputIsNumber(uint8_t inputValue); // return 0 when valid and -1 when not valid
 uint8_t checkIfInputIsOperation(uint8_t inputValue); // return 0 when valid and -1 when not valid
-uint32_t stringToInt(uint8_t *str);
+int32_t stringToInt(uint8_t *str);
 
 typedef enum {
   FIRSTNUM,
@@ -54,7 +48,7 @@ OperationType getOperationType(uint8_t c) {
   }
 }
 
-uint32_t calculate(uint32_t valueA, uint32_t valueB, OperationType operationType) {
+int32_t calculate(int32_t valueA, int32_t valueB, OperationType operationType) {
   switch (operationType) {
     case SUM:
       return valueA + valueB;
@@ -71,8 +65,8 @@ uint32_t calculate(uint32_t valueA, uint32_t valueB, OperationType operationType
   }
 }
 
-uint32_t countDigits(uint32_t value) {
-  uint32_t result = 1;
+int32_t countDigits(int32_t value) {
+  int32_t result = 1;
 
   while (value/10 != 0) {
     result++;
@@ -82,19 +76,21 @@ uint32_t countDigits(uint32_t value) {
   return result;
 }
 
-void printIntToUart(uint32_t value) {
+void printIntToUart(int32_t value) {
   if (value < 0) {
     Uart0_Send('-');
     value *= -1;
   }
 
-  uint32_t numberOfDigits = countDigits(value);
+  int32_t numberOfDigits = countDigits(value);
+  
+  uint8_t str[4];
 
-  uint32_t aux = value;
+  int32_t aux = value;
 
-  uint32_t i;
+  int32_t i;
 
-  for (i = numberOfDigits; i >= 0; i--) {
+  for (i = numberOfDigits; i > 0; i--) {
     str[i-1] = (uint8_t)((aux % 10) + 48);
     aux = aux / 10;
   }
@@ -105,6 +101,7 @@ void printIntToUart(uint32_t value) {
 
   while (str[i] != '\0') {
     Uart0_Send(str[i]);
+    i++;
   }
   
   sendNextLineToUart();
@@ -114,35 +111,17 @@ int main(void) {
   GPIO_Init();
   Uart0_Init();
 
-  uint32_t valueA;
+  int32_t valueA;
   uint8_t valueAStr[4];
   uint8_t valueAStrPosition = 0;
 
-  uint32_t valueB = 0;
+  int32_t valueB = 0;
   uint8_t valueBStr[4];
   uint8_t valueBStrPosition = 0;
 
   OperationType operationType;
   
   CalcStep calcStep = FIRSTNUM;
-
-  void clearVariables() {
-    valueA = 0;
-    valueAStr[0] = '0';
-    valueAStr[1] = '0';
-    valueAStr[2] = '0';
-    valueAStr[3] = '\0';
-    valueAStrPosition = 0;
-
-    valueB = 0;
-    valueBStr[0] = '0';
-    valueBStr[1] = '0';
-    valueBStr[2] = '0';
-    valueBStr[3] = '\0';
-    valueBStrPosition = 0;
-
-    calcStep = FIRSTNUM;
-  }
 
   while (1) {
     uint8_t kbInput = Uart0_Rcv();
@@ -170,9 +149,12 @@ int main(void) {
             break;
           }
 
-          operationType = getOperationType(kbInput);
-          valueAStr[valueAStrPosition] = '\0';
-          calcStep = SECONDNUM;
+          if (valueAStrPosition != 0 && valueAStr[valueAStrPosition] != '-') {
+            operationType = getOperationType(kbInput);
+            valueAStr[valueAStrPosition] = '\0';
+            Uart0_Send(kbInput);
+            calcStep = SECONDNUM;
+          }
         }
 
         break;
@@ -210,7 +192,7 @@ int main(void) {
         if (
           kbInput == '=' && 
           valueBStrPosition != 0 && 
-          valueBStr[valueBStrPosition] != '-'
+          valueBStr[0] != '-'
         ) {
           valueBStr[valueBStrPosition] = '\0';
           Uart0_Send(kbInput);
@@ -220,20 +202,49 @@ int main(void) {
 
           printIntToUart(calculate(valueA, valueB, operationType));
 
-          clearVariables();
+          valueA = 0;
+          valueAStr[0] = '0';
+          valueAStr[1] = '0';
+          valueAStr[2] = '0';
+          valueAStr[3] = '\0';
+          valueAStrPosition = 0;
+
+          valueB = 0;
+          valueBStr[0] = '0';
+          valueBStr[1] = '0';
+          valueBStr[2] = '0';
+          valueBStr[3] = '\0';
+          valueBStrPosition = 0;
+
+          calcStep = FIRSTNUM;
         }
 
         break;
       
       case RESULT:
         if (kbInput == '=') {
+          Uart0_Send(kbInput);
           
           valueA = stringToInt(valueAStr);
           valueB = stringToInt(valueBStr);
 
           printIntToUart(calculate(valueA, valueB, operationType));
 
-          clearVariables();
+          valueA = 0;
+          valueAStr[0] = '0';
+          valueAStr[1] = '0';
+          valueAStr[2] = '0';
+          valueAStr[3] = '\0';
+          valueAStrPosition = 0;
+
+          valueB = 0;
+          valueBStr[0] = '0';
+          valueBStr[1] = '0';
+          valueBStr[2] = '0';
+          valueBStr[3] = '\0';
+          valueBStrPosition = 0;
+
+          calcStep = FIRSTNUM;
         }
         break;
     }

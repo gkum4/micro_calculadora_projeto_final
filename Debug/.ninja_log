@@ -1,0 +1,24 @@
+# ninja log v5
+672	883	6514575355971573	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/cstartup_M.o	8259f75937b2c37c
+1	959	6514575356571496	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/gpio.o	bbc3d0be7e34e439
+895	1321	6514575360322803	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/uart.o	fa02e5483bc9f302
+1	199	6514578032103520	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/functions.o	47c3d2c9581ba36d
+1	267	6514580860729126	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/main.o	4d4827e19685540a
+281	504	6514580863128875	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Exe/micro_calculadora_projeto_final.out	29ada24550ac724e
+3	398	6514585046526967	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/main.o	4d4827e19685540a
+411	556	6514585048126785	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Exe/micro_calculadora_projeto_final.out	29ada24550ac724e
+4	197	6514587232903041	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/main.o	4d4827e19685540a
+210	322	6514587234202903	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Exe/micro_calculadora_projeto_final.out	29ada24550ac724e
+4	515	6514589032438806	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/functions.o	47c3d2c9581ba36d
+17	548	6514589032638741	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/main.o	4d4827e19685540a
+564	701	6514589034338573	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Exe/micro_calculadora_projeto_final.out	29ada24550ac724e
+4	432	6514593242494264	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/main.o	4d4827e19685540a
+447	584	6514593243994147	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Exe/micro_calculadora_projeto_final.out	29ada24550ac724e
+3	234	6514594737166148	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/main.o	4d4827e19685540a
+245	351	6514594738466017	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Exe/micro_calculadora_projeto_final.out	29ada24550ac724e
+3	203	6514595863066616	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/main.o	4d4827e19685540a
+215	327	6514595864366521	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Exe/micro_calculadora_projeto_final.out	29ada24550ac724e
+5	1063	6514597759145604	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/main.o	4d4827e19685540a
+1077	1282	6514597761345416	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Exe/micro_calculadora_projeto_final.out	29ada24550ac724e
+4	396	6514601677432350	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Obj/main.o	4d4827e19685540a
+412	557	6514601679032205	C:/Users/gusta/Documents/UTFPR/Sistemas Microcontrolados/micro_calculadora_projeto_final/Debug/Exe/micro_calculadora_projeto_final.out	29ada24550ac724e
