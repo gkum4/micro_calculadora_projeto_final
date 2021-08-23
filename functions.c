@@ -75,7 +75,7 @@ int32_t stringToInt(uint8_t *str) {
     i = 1;
   }
 
-  for (i = 0; i < numberOfCharacters; i++) {
+  for (i; i < numberOfCharacters; i++) {
     int32_t intValue = charToInt(str[i]);
 
     if (intValue == -1) {

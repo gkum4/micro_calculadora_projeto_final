@@ -113,11 +113,11 @@ int main(void) {
 
   int32_t valueA;
   uint8_t valueAStr[4];
-  uint8_t valueAStrPosition = 0;
+  int8_t valueAStrPosition = 0;
 
   int32_t valueB = 0;
   uint8_t valueBStr[4];
-  uint8_t valueBStrPosition = 0;
+  int8_t valueBStrPosition = 0;
 
   OperationType operationType;
   

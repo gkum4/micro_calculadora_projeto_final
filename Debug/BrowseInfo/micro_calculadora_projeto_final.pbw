@@ -3260,7 +3260,7 @@
     "defdec": "Def",
     "display": "isNegative",
     "location": {
-      "column": "11",
+      "column": "10",
       "line": "68",
       "path": "C:\\Users\\gusta\\Documents\\UTFPR\\Sistemas Microcontrolados\\micro_calculadora_projeto_final\\functions.c"
     },
@@ -3269,7 +3269,7 @@
     "scope": null
   },
   {
-    "ID": "c:functions.c@1259@F@stringToInt@numberOfCharacters",
+    "ID": "c:functions.c@1258@F@stringToInt@numberOfCharacters",
     "What": "Variable",
     "defdec": "Def",
     "display": "numberOfCharacters",
@@ -3283,7 +3283,7 @@
     "scope": null
   },
   {
-    "ID": "c:functions.c@1315@F@stringToInt@i",
+    "ID": "c:functions.c@1314@F@stringToInt@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
@@ -3297,7 +3297,7 @@
     "scope": null
   },
   {
-    "ID": "c:functions.c@1447@F@stringToInt@intValue",
+    "ID": "c:functions.c@1442@F@stringToInt@intValue",
     "What": "Variable",
     "defdec": "Def",
     "display": "intValue",
@@ -114634,7 +114634,7 @@
     "defdec": "Def",
     "display": "valueAStrPosition",
     "location": {
-      "column": "11",
+      "column": "10",
       "line": "116",
       "path": "C:\\Users\\gusta\\Documents\\UTFPR\\Sistemas Microcontrolados\\micro_calculadora_projeto_final\\main.c"
     },
@@ -114643,7 +114643,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2115@F@main@valueB",
+    "ID": "c:main.c@2114@F@main@valueB",
     "What": "Variable",
     "defdec": "Def",
     "display": "valueB",
@@ -114657,7 +114657,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2138@F@main@valueBStr",
+    "ID": "c:main.c@2137@F@main@valueBStr",
     "What": "Variable",
     "defdec": "Def",
     "display": "valueBStr",
@@ -114671,12 +114671,12 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2163@F@main@valueBStrPosition",
+    "ID": "c:main.c@2162@F@main@valueBStrPosition",
     "What": "Variable",
     "defdec": "Def",
     "display": "valueBStrPosition",
     "location": {
-      "column": "11",
+      "column": "10",
       "line": "120",
       "path": "C:\\Users\\gusta\\Documents\\UTFPR\\Sistemas Microcontrolados\\micro_calculadora_projeto_final\\main.c"
     },
@@ -114685,7 +114685,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2199@F@main@operationType",
+    "ID": "c:main.c@2197@F@main@operationType",
     "What": "Variable",
     "defdec": "Def",
     "display": "operationType",
@@ -114699,7 +114699,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2235@F@main@calcStep",
+    "ID": "c:main.c@2233@F@main@calcStep",
     "What": "Variable",
     "defdec": "Def",
     "display": "calcStep",
@@ -114713,7 +114713,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2287@F@main@kbInput",
+    "ID": "c:main.c@2285@F@main@kbInput",
     "What": "Variable",
     "defdec": "Def",
     "display": "kbInput",

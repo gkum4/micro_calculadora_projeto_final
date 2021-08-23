@@ -58,7 +58,7 @@
         <MemConfigValue>C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\CONFIG\debugger\TexasInstruments\TM4C1294NCPDT.ddf</MemConfigValue>
     </PlDriver>
     <DebugChecksum>
-        <Checksum>2642121121</Checksum>
+        <Checksum>3244309304</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
