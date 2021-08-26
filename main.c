@@ -1,3 +1,9 @@
+// main.c
+// Desenvolvido para a placa EK-TM4C1294XL
+// Calculadora de 3 dígitos (de input para cada número)
+// Após a inicialização do GPIO e do UART, aguarda input do teclado do usuário para realizar o cálculo
+// Gustavo Kumasawa
+
 #include <stdint.h>
 
 void GPIO_Init(void);
